@@ -1,0 +1,32 @@
+.numeros {
+    height: 30px;
+    width: 30px;
+}
+
+.opm {
+    height: 50px;
+    width: 50px;
+}
+.n1 {
+    width:336px;
+    margin: auto;
+    border: 1px solid rgb(3, 3, 3);
+    }
+
+.n2 {
+    width:336px;
+    margin: auto;
+    border: 1px solid rgb(3, 3, 3);
+    }
+
+#topo {
+    width:350px;
+    margin: auto;
+    border: 1px solid rgb(3, 3, 3);
+    }
+
+#visor {
+    width:350px;
+    margin: auto;
+    border: 1px solid rgb(3, 3, 3);
+    }

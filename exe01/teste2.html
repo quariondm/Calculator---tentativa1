@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script type="text/javascript" src="calc.js"></script>
+    </head>
+    <body>
+        <h1 id="title"> Calculadora - 2ª Tentativa</h1>
+        <br>
+        <form class="calc" name="calc">
+            <input id="visor" class="visor" type="text" name="visor"> <br>
+            <input type="button" value="." onclick="botao (value);" /><br>
+            <input type="button" value="7" onclick="botao (value);" />
+            <input type="button" value="8" onclick="botao (value);" />
+            <input type="button" value="9" onclick="botao (value);" />
+            <input type="button" value="/" onclick="botao (value);" /><br>
+            <input type="button" value="4" onclick="botao (value);" />
+            <input type="button" value="5" onclick="botao (value);" />
+            <input type="button" value="6" onclick="botao (value);" />
+            <input type="button" value="*" onclick="botao (value);" /><br>
+            <input type="button" value="1" onclick="botao (value);" />
+            <input type="button" value="2" onclick="botao (value);" />
+            <input type="button" value="3" onclick="botao (value);" />
+            <input type="button" value="-" onclick="botao (value);" /><br>
+            <input type="button" value="0" onclick="botao (value);" />
+            <input type="button" value="C" onclick="limpa();" />
+            <input type="button" value="=" onclick="resolve ();" />
+            <input type="button" value="+" onclick="botao (value);" />
+
+        </form>
+        <style>
+
+            body {
+            background-color: rgb(5, 153, 221);
+            }
+
+            .calc {
+                width:300px;
+                text-align: center;
+                margin: auto;
+                border: 1px solid rgb(99, 4, 4);
+                }
+            #title  {
+                width:450px;
+                margin: auto;
+                border: 5px solid rgb(99, 4, 4);
+                }
+    
+            h1 {
+                text-align: center;
+                text-transform: uppercase;
+                color: rgb(4, 5, 4);
+}
+        </style>
+    </body>
+
+</html>

@@ -1,0 +1,41 @@
+<div id="minhadiv" >
+    Minha idade: <span id="minhaidade"> ? </span>
+</div>
+<div class="minhadiv">
+    Div de teste <span> ? </span>
+</div>
+<div>
+    <input id="meuinput" class="minhadiv" type="number">
+</div>
+<div>
+    <button id="meuBotao" onclick="click_do_botao()" >
+        Set idade
+    </button>
+</div>
+
+<style>
+
+#minhadiv {
+    color: red
+}
+
+#meuBotao {
+    height: 60px;
+    width: 60px;
+}
+
+</style>
+
+<script>
+
+    function click_do_botao(){
+       var texto = document.getElementById("meuinput").value;
+       var spanMinhaIdade = document.getElementById("minhaidade");
+       if(texto)
+            spanMinhaIdade.innerHTML += texto + ' - ';
+            document.getElementById("meuinput").value = "";
+    }
+
+</script>
+
+

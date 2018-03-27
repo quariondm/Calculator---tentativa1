@@ -1,0 +1,21 @@
+.calculadora{
+    background-color: royalblue;
+    height: 350px;
+    width: 300px;
+
+}
+
+.visor{
+    background-color: rgb(5, 5, 5);
+    height: 50px;
+    width: 300px;
+
+}
+.divi {
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: royalblue;
+}
