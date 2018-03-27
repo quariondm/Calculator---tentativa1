@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.3.1.js"></script>
+    <title>Calculadora</title>
+</head>
+<style>
+    .calculadora {
+        background: black;
+        width: 20em;
+        height: 30em;
+        padding-top: 1em;
+    }
+    .visor {
+        width: 18em;
+        height: 4em;
+        text-align: right;
+        margin: auto;
+        background: #CCC;
+    }
+    .visor span {
+        font-size: 3em;
+        font-family: monospace;
+        padding-right: 0.3em;
+        line-height: 1.7em;
+    }
+    .botoes {
+        color: white;
+        padding: 1em;
+    }
+    .botao {
+        width: 7em;
+        height: 5em;
+    }
+    #op {
+        position: absolute;
+        z-index: 999;        
+    }
+</style>
+<body>
+    <div class="calculadora" >
+        <div class="visor">
+            <label id="op"></label>
+            <span id="visor">0</span>
+        </div>
+        <div class="botoes" >
+            
+        </div>
+    </div>
+</body>
+
+
+<script>
+    var numeros = "1234567890+-C*/=";
+    var botoes = "";
+    numeros.split('')
+    .map(
+        function(x) {
+            var btn = "<button class='botao'>"+ x + "</button>";
+           botoes += btn;
+        }
+    )
+
+    var v1 = '', v2 = '', res,op = '', val='';
+
+    function setVisor(texto){
+        $('#visor').html(texto);
+    }
+    function getVisor(){
+        return $('#visor').html();
+    }
+    function incVisor(texto){
+       setVisor(getVisor() + texto);
+    }
+    function setOp(texto){
+        $('#op').html(texto);
+
+    
+
+    $(document).ready(function(){
+        $('.botoes').html(botoes);
+        $(".botao").click( function(){
+            var textoBotao = $(this).html();
+            //var op = 0;
+            if(textoBotao == "C") {
+                v1 = " ";
+                v2 = " ";
+                val = " ";
+                op = " "; 
+                $("#op").text("")
+                return setVisor("0");
+             
+        }
+            if(getVisor() == "0")
+                setVisor("");                                
+            console.log("clicou no bnt " + textoBotao);
+            val += textoBotao;
+            incVisor(textoBotao)
+
+            if(v1 != ''){
+                v2 = val;
+                console.log(v2);
+                let aux = v2.split(op)
+                v1 = aux[0];
+                v2 = aux[1];
+                console.log(aux[0],aux[1]);
+                $("#op").text(v1+""+op+""+v2);
+                setVisor(v2)
+            }
+
+            if(textoBotao == '+'){
+                v1 = val.replace("+"," ");
+                op = "+"
+                $("#op").text(v1+""+op)
+                return setVisor("0")
+            }
+            else if(textoBotao == "-"){
+                v1 = val.replace("-"," ");
+                op = "-"
+                $("#op").text(v1+""+op)
+                return setVisor("0")
+            }
+            else if(textoBotao == "/"){
+                v1 = val.replace("/"," ");
+                op = "/"
+                $("#op").text(v1+""+op)
+                return setVisor("0")
+            }
+            else if(textoBotao == "*"){
+                v1 = val.replace("*","");
+                op = "*"
+                $("#op").text(v1+""+op)
+                return setVisor("0")
+            }
+            else if(textoBotao == "="){
+                console.log('clickou ',op)
+                switch(op){
+                    case '+':
+                     resp = parseFloat(v1) + parseFloat(v2)
+                     setVisor(resp);
+                     break;
+                     case '-':
+                     resp = parseFloat(v1) - parseFloat(v2)
+                     setVisor(resp);
+                     break;
+                     case '*':
+                     resp = parseFloat(v1) * parseFloat(v2)
+                     setVisor(resp);
+                     break;
+                     case '+':
+                     resp = parseFloat(v1) + parseFloat(v2)
+                     setVisor(resp);
+                     break;
+                     case '/':
+                     resp = parseFloat(v1) / parseFloat(v2)
+                     setVisor(resp);
+                     break;
+                }
+            }
+                        
+                
+        });
+    })
+
+
+   
+
+
+
+</script>
+
+</html>
